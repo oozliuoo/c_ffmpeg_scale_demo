@@ -1,0 +1,1 @@
+./a.out --src tulips_yuv422_inter_planar_qcif.yuv --dst scaled.yuv --sw 176 --sh 144 --dw 88 --dh 72
