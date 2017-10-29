@@ -83,10 +83,12 @@ int main(int argc, char **argv)
 	uint8_t in[read_size]; 
 	uint8_t out[write_size];
 
+	/*
 	printf("dst_width: %i\n", dst_width);
 	printf("dst_height: %i\n", dst_height);
 	printf("write frame size: %i\n", write_frame_size);
 	printf("write size: %i\n", write_size);
+	*/
 
 	FILE *fin = fopen(src_file, "rb"); 
 	FILE *fout = fopen(dst_file, "wb");
@@ -135,7 +137,7 @@ int main(int argc, char **argv)
 	for (i = 0; i < frame_num; i ++)
 	{
 		long offset = i * src_width * src_height * 3 / 2;
-		printf("input offset: %ld\n", offset);
+		// printf("input offset: %ld\n", offset);
 		memcpy(inbuf[0], in + offset, src_width * src_height); 
 		memcpy(inbuf[1], in + offset + src_width * src_height, src_width * src_height >> 2); 
 		memcpy(inbuf[2], in + offset + (src_width * src_height * 5 >> 2), src_width * src_height >> 2);
@@ -152,7 +154,7 @@ int main(int argc, char **argv)
 		);
 	
 		long output_offset = i * dst_width * dst_height * 3 / 2;
-		printf("output offset: %ld\n", output_offset);
+		// printf("output offset: %ld\n", output_offset);
 		memcpy(out + output_offset, outbuf[0], dst_width * dst_height); 
 		memcpy(out + output_offset + dst_width * dst_height, outbuf[1], dst_width * dst_height >> 2); 
 		memcpy(out + output_offset + (dst_width * dst_height * 5 >> 2), outbuf[2], dst_width * dst_height >> 2);
