@@ -34,3 +34,4 @@ Download [YUView](https://github.com/IENT/YUView/releases), and run it to open t
 
 # References
 1. [how to use ffmpeg scale](http://guguclock.blogspot.sg/2009/12/ffmpeg-swscale.html)
+2. [ffmpeg github](https://github.com/FFmpeg/FFmpeg)
