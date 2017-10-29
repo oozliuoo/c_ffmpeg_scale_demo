@@ -1,0 +1,5 @@
+*.out
+
+*.yuv
+
+a.out.dSYM/
