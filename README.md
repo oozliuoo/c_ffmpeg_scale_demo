@@ -31,3 +31,6 @@ NOTE: the sample file in this repository has `width = 176` and `height = 144`, a
 # Verifying result
 
 Download [YUView](https://github.com/IENT/YUView/releases), and run it to open the source and the destination file. Then you could verify that the resolution has been changed.
+
+# References
+1. [how to use ffmpeg scale](http://guguclock.blogspot.sg/2009/12/ffmpeg-swscale.html)
