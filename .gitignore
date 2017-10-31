@@ -3,3 +3,5 @@
 *.yuv
 
 a.out.dSYM/
+
+.DS_Store
