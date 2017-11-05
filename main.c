@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	int src_width = 0, src_height = 0;
 	int dst_width = 0, dst_height = 0;
 	int frame_num = 0;
-	enum AVPixelFormat pix_fmt = AV_PIX_FMT_NV21;
+	enum AVPixelFormat pix_fmt = AV_PIX_FMT_YUV420P16BE;
 
 	/* getopt_long stores the option index here. */
 	int option_index = 0;
@@ -139,8 +139,8 @@ int main(int argc, char **argv)
 		long offset = i * src_width * src_height * 3 / 2;
 		// printf("input offset: %ld\n", offset);
 		memcpy(inbuf[0], in + offset, src_width * src_height); 
-		memcpy(inbuf[1], in + offset + src_width * src_height, src_width * src_height >> 2); 
-		memcpy(inbuf[2], in + offset + (src_width * src_height * 5 >> 2), src_width * src_height >> 2);
+		memcpy(inbuf[1], in + offset + src_width * src_height, (src_width * src_height) >> 2); 
+		memcpy(inbuf[2], in + offset + ((src_width * src_height * 5) >> 2), (src_width * src_height) >> 2);
 	
 		// start sws_scale 
 		sws_scale(
@@ -156,8 +156,8 @@ int main(int argc, char **argv)
 		long output_offset = i * dst_width * dst_height * 3 / 2;
 		// printf("output offset: %ld\n", output_offset);
 		memcpy(out + output_offset, outbuf[0], dst_width * dst_height); 
-		memcpy(out + output_offset + dst_width * dst_height, outbuf[1], dst_width * dst_height >> 2); 
-		memcpy(out + output_offset + (dst_width * dst_height * 5 >> 2), outbuf[2], dst_width * dst_height >> 2);
+		memcpy(out + output_offset + dst_width * dst_height, outbuf[1], (dst_width * dst_height) >> 2); 
+		memcpy(out + output_offset + ((dst_width * dst_height * 5) >> 2), outbuf[2], (dst_width * dst_height) >> 2);
 	}
 	
 	fwrite(out, 1, write_size, fout);
