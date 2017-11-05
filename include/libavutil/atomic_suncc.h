@@ -19,7 +19,7 @@
 #ifndef AVUTIL_ATOMIC_SUNCC_H
 #define AVUTIL_ATOMIC_SUNCC_H
 
-#include <atomic.h>
+#include <libavutil/atomic.h>
 #include <mbarrier.h>
 
 #include "atomic.h"

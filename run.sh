@@ -1,1 +1,1 @@
-./a.out --src tulips_yuv422_inter_planar_qcif.yuv --dst scaled.yuv --sw 176 --sh 144 --dw 352 --dh 288 --framenum 8
+./a.out --src origin167.yuv --dst scaled167_nv21.yuv --sw 1280 --sh 720 --dw 320 --dh 180 --framenum 1

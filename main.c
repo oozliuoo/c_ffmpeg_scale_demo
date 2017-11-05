@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	int src_width = 0, src_height = 0;
 	int dst_width = 0, dst_height = 0;
 	int frame_num = 0;
-	enum AVPixelFormat pix_fmt = AV_PIX_FMT_YUVJ420P;
+	enum AVPixelFormat pix_fmt = AV_PIX_FMT_NV21;
 
 	/* getopt_long stores the option index here. */
 	int option_index = 0;
